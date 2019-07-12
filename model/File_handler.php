@@ -1,4 +1,7 @@
 <?php 
+namespace model;
+use model\File_Def_Proto;
+
 
 class File_handler extends File_Def_Proto
 {

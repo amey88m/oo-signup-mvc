@@ -10,7 +10,7 @@
 				  			switch(LogModel::$outputError):
 				  				
 				  				case 0:
-				  				print Errorhandling::$_err_log_msg['alert'][3];
+				  				print Errors::$_err_log_msg['alert'][3];
 				  				break;
 
 				  			endswitch;

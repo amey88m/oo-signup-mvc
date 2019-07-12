@@ -1,4 +1,6 @@
 <?php 
+namespace controller;
+
 /**
  *Base controller
  */

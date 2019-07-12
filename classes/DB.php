@@ -1,4 +1,6 @@
 <?php  
+namespace classes;
+
 
 /**
  * DB connection
@@ -8,16 +10,20 @@ class DB
 	// df variables
 	private $host 	 	="localhost";
 	private $username 	= "root";
-	private $password 	= "";
+	private $password 	= "1234567890";
 	private $dbname  	= "mvc";
 	public $con;
 
-		public function connection()
+		public function __construct()
 		{
 			$this->con = mysqli_connect($this->host, $this->username, $this->password, $this->dbname);
-			
+			return $this->con;
+		}
+
+		public function connection()
+		{
 			if(!$this->con):
-				print mysqli_error();
+				mysqli_die();
 			else:
 				return "success";
 			endif;

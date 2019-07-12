@@ -1,4 +1,6 @@
-
+<?php
+use model\UserRegistrationModel;
+?>
 
 <div class='container'>
 	<div class='row'>
@@ -13,41 +15,53 @@
 				  			switch(UserRegistrationModel::$outputError):
 				  				
 				  				case 0:
-				  				print Errorhandling::$_err_msg['alert'][0];
+				  				print Errors::$_err_msg['alert'][0]; // email empty
 				  				break;
 
 				  				case 1:
-				  				print Errorhandling::$_err_msg['alert'][1];
+				  				print Errors::$_err_msg['alert'][1]; // email invalid
 				  				break;
 
 				  				case 2:
-				  				print Errorhandling::$_err_msg['alert'][2];
+				  				print Errors::$_err_msg['alert'][2]; // password
 				  				break;
 
 				  				case 3:
-				  				print Errorhandling::$_err_msg['alert'][3];
+				  				print Errors::$_err_msg['alert'][3]; // upload resume
 				  				break;
 
 				  				case 4:
-				  				print Errorhandling::$_err_msg['alert'][4];
+				  				print Errors::$_err_msg['alert'][4]; // file .ext 
 				  				break;
 
 				  				case 5:
-				  				print Errorhandling::$_err_msg['alert'][5];
+				  				print Errors::$_err_msg['alert'][5]; // file size
 				  				break;
 
 				  				case 6:
-				  				print Errorhandling::$_err_msg['alert'][6];
+				  				print Errors::$_err_msg['alert'][6]; // upload error
 				  				break;
 
 				  				case 7:
-				  				print Errorhandling::$_err_msg['alert'][7];
+				  				print Errors::$_err_msg['alert'][7];
 				  				break;
 
 				  				case 8:
-				  				print Errorhandling::$_err_msg['alert'][8];
+				  				print Errors::$_err_msg['alert'][8]; // gender check
 				  				break;
-				  				
+								  
+								case 9:
+								print Errors::$_err_msg['alert'][9]; // terms & condition
+								break;
+
+								case 10:
+								print Errors::$_err_msg['alert'][10]; // user already exits
+								break;
+
+								case 11:
+								print Errors::$_err_msg['alert'][11]; // user registered successfully
+								break;
+
 				  			endswitch;
 				  		?>
 				  	</span>

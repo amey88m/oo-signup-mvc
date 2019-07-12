@@ -11,12 +11,12 @@
 # set routes by calling Route class's method route
 # routes are use to controll over url  
 # routes are defined to know on which url path request should display which view
-
+# routes control's over url
 
 
 
 # CONTROLLER
-# we have created base controller called 'controller/Controller'
+# I created base controller called 'controller/Controller'
 # controller is the thread between view and model who controlles it.
 
 

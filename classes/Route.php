@@ -1,4 +1,6 @@
 <?php 
+namespace classes;
+
 /**
  * Base Route
  */

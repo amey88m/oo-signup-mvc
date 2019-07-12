@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0" >
-<title><?php print $title="oo" ?></title>
+<?php include_once "inc/header.inc.php"?>
 
 <link rel="stylesheet" href="<?php print 'sass/style.css' ?> ">
 </head>
@@ -19,8 +14,6 @@
 </div>
 
 
-
-
 <div class="container">
 	
 	<div class="row">
@@ -30,33 +23,46 @@
 			  <div class="card-body">
 			    <h5 class="card-title">Please fill all the below details: </h5>
 
-			 <form method="POST" name="formreg" autocomplete="" enctype="multipart/form-data" >
+			 <form method="POST" name="formreg" autocomplete="off" enctype="multipart/form-data" >
 
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+						<?php
+						$email = (isset($_POST['email']))? $_POST['email']:"";
+						?>
+					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" value="<?php print $email; ?>">
 					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 					    <span style='color:#f02'> <?php   ?></span>
 					  </div>
 					  <div class="form-group">
 					    <label>Password</label>
-					    <input type="password" class="form-control" placeholder="Password" name="pass">
+						<?php
+						$pass = (isset($_POST['pass']))? $_POST['pass']:"";
+						?>
+					    <input type="password" class="form-control" placeholder="Password" name="pass" value=<?php print $pass; ?>>
 					    <span style='color:#f02'> <?php    ?></span>
 					  </div>
 					  <div class="form-group">
 					  	<label>Upload your Resume</label>
-    					<input type="file" class="form-control-file" name="resume">
+						  <?php
+						  $resume = (isset($_FILES['resume']['name']))? $_FILES['resume']['name']:"";
+						  ?>
+    					<input type="file" class="form-control-file" name="resume" value="<?php print $resume; ?>">
     					<span style='color:#f02'> <?php    ?></span>
 					  </div>
 					  <div class="form-group">
 					  	<label>Upload your profile pic</label>
-    					<input type="file" class="form-control-file" name="avatar">
+						  <?php
+						  $avatar = (isset($_FILES['avatar']['name']))? $_FILES['avatar']['name']:"";
+						  ?>
+    					<input type="file" class="form-control-file" name="avatar" value="<?php print $avatar; ?>">
     					<span style='color:#f02'> <?php    ?></span>
 					  </div>
 					  <div class="form-group">
-						<select name="gender[]" class="form-control">
-							<option>F</option>
-							<option>M</option>
+					  	<select name="gender[]" class="form-control">
+							<option value='0'>select gender:</option>
+							<option >F</option>
+							<option >M</option>
 						</select>
 						<span style='color:#f02'> <?php    ?></span>
 					  </div>
@@ -76,11 +82,7 @@
 
 </div>
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+<?php include_once "inc/footer.inc.php" ?>
 </body>
 
 </html>

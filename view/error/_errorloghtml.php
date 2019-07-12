@@ -1,5 +1,7 @@
 
-
+<?php
+use model\LogModel;
+?>
 <div class='container'>
 	<div class='row'>
 		<div class='col-md-12'>
@@ -12,15 +14,15 @@
 				  			switch(LogModel::$outputError):
 				  				
 				  				case 0:
-				  				print Errorhandling::$_err_log_msg['alert'][0];
+				  				print Errors::$_err_log_msg['alert'][0];
 				  				break;
 
 				  				case 1:
-				  				print Errorhandling::$_err_log_msg['alert'][1];
+				  				print Errors::$_err_log_msg['alert'][1];
 				  				break;
 
 				  				case 2:
-				  				print Errorhandling::$_err_log_msg['alert'][2];
+				  				print Errors::$_err_log_msg['alert'][2];
 				  				break;
 
 				  			endswitch;

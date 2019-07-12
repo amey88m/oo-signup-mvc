@@ -1,4 +1,8 @@
-<?php 
+<?php
+namespace model;
+use model\Model;
+use classes\DB;	
+
 /**
  * 
  */
@@ -7,18 +11,11 @@ class LogModel extends Model
 
 
 	private $conn;
-
-
 	private $query;
-
-
 	public static $outputError;
-
-
 	public $log_response  = 0;
 
 	
-
 
 		private function checkconn()
 		{

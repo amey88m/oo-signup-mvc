@@ -1,9 +1,15 @@
 <?php 
+use classes\DB;
+use controller\LoginController;
+
+
 
 	// check is there any data waiting from login button 
 	if(isset($_POST['btnlogin'])):
 		
+		$db = new DB;
 		
+
 		#	escape strings to prevent sql injection
 		$useremail 		= $_POST['email'];
 		$userpassword 	= $_POST['password'];
@@ -25,14 +31,14 @@
 			# check for empty string 
 			if(empty($userEmail)):
 				self::$outputError = 0;
-				$log_cont->loadError('Error');
+				$log_cont->loadError('Errors');
 				$log_cont->loadError('_errorloghtml');
 				return $this->log_response = 0;
 				exit();
 			else:
 				if(empty($userPassword)):
 					self::$outputError = 1;
-					$log_cont->loadError('Error');
+					$log_cont->loadError('Errors');
 					$log_cont->loadError('_errorloghtml');
 					return $this->log_response = 0;
 					exit();
@@ -45,7 +51,7 @@
 						#	check user is registered-user or/^ else redirect user to register-pg
 						if( $resultrows === 0 ):
 							self::$outputError = 2;
-							$log_cont->loadError('Error');
+							$log_cont->loadError('Errors');
 							$log_cont->loadError('_errorloghtml');
 							return $this->log_response = 0;
 							exit();

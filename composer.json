@@ -1,0 +1,17 @@
+{
+    "name": "amey/oogit",
+    "authors": [
+        {
+            "name": "amey",
+            "email": "amey88_m@yahoo.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "classes\\":"classes",
+            "controller\\":"controller",
+            "model\\":"model"
+        }
+    }
+}

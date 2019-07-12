@@ -1,4 +1,10 @@
 <?php 
+namespace controller;
+use model\LogModel;
+
+
+
+
 
 class LoginController extends Controller
 {

@@ -1,4 +1,6 @@
-<?php 
+<?php
+namespace classes;
+
 /**
  * 
  */
@@ -11,19 +13,19 @@ class Session
 	public $session_response = 0;
 
 
-	# default session value to start session;
-	public static $sessionstart = 1;
+	# 	default session value to start session;
+	private static $sessionstart = 1;
 
 
 	#	set session key first and then good to go with getsession($k,$v);
 	private static $_set_sess_arr = Array('uid','sessemail','sesspass','stime');
 
-
+	
 
 				
 				private function sessionstart()
 				{
-						// session_save_path('');
+					
 						session_start();
 						session_id();
 						session_regenerate_id(true);

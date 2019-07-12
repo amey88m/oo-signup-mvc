@@ -1,4 +1,9 @@
 <?php 
+namespace model;
+use classes\DB;
+
+
+
 /**
  * Base model classs
  */
