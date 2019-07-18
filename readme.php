@@ -1,4 +1,4 @@
-# set the rule for index file by creating '.htaccess' so that each request will be first go to 'default.php'
+# Redirect every single request to 'index.php' by setting rules on '.htaccess' file.
 
 # required directory neccessary for mvc
 # create model folder
@@ -28,6 +28,47 @@
 
 
 
-# MODEL
+#######################
+Hello,
+
+This is simple signup page with upload - resume & profile pic. (no security part is included)
+
+What is in project?
+
+# DEFAULT ROUTE
+
+# set the rule for index file by creating '.htaccess' so that each client request will first redirect to 'x.php' file
+# It's a default route setting. This default route maps each url & all other routes request.
+# set routes by calling Route class's method route.
+
+
+
+# CONTROLLER
+
+# controller are controll's the flow of application. It controll's the view's and model's. In simple, controller decide on route which view / model 
+to be load.
+
+
+
+
+Database: `mvc`
+
+
+
+Table structure for table `signup`
+
+
+CREATE TABLE `signup` (
+  `cid` smallint(5) UNSIGNED NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(500) DEFAULT NULL,
+  `gender` enum('M','F') DEFAULT NULL,
+  `resume` longtext NOT NULL,
+  `profile_pic` varbinary(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+# Note : Don't use "httpd.conf" file if your rewrite module is on.
 
 

@@ -26,6 +26,8 @@ class Route
 
 			if($_GET['url'] == $url):
 				return $function->__invoke();
+			else:
+				http_response_code(404);
 			endif;
 
 		}

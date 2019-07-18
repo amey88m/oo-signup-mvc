@@ -121,50 +121,6 @@ class UserRegistrationModel extends Model
 								endif;
 							endif;
 						endif;	
-						
-						/*
-						
-								
-								if(File_handler::$test !== 0):
-
-									
-										else:
-											$query 	  = $db->rowscount("SELECT * FROM signup WHERE email='$email'");
-											$rowcount = mysqli_num_rows($query);
-										
-											# check for user exits
-											if($rowcount > 0):
-												self::$outputError=6;
-												$_err_obj->loadError('Errors'); 
-												$_err_obj->loadError('_errorhtml');
-												return $this->auth_response = false;
-												exit();
-											else:
-$result = $db->rowscount("INSERT INTO signup(email,password,gender,resume,profile_pic) values('$email','$pass','$gen','$resume','$avatar')");
-												self::$outputError=7;
-												$_err_obj->loadError('Errors'); 
-												$_err_obj->loadError('_errorhtml');
-
-												#################
-												# session start #
-												#################
-												$uid = uniqid('', true);
-												$_err_obj->loadClass('Session');
-												$_sess_obj = new Session;
-												$_sess_obj->getsession('sessemail',$_POST['email'],1);
-												$_sess_obj->getsession('sesspass',$_POST['pass'],0);
-												$_sess_obj->getsession('stime',time(),0);
-												$_sess_obj->getsession('uid',$uid,0);
-
-												return $this->auth_response = 1;
-												exit();
-											endif;	
-										endif;
-									endif;
-								endif;
-							
-						
-						*/
 					endif;
 			
 		}
